@@ -4,7 +4,7 @@ import { Route, Navigate } from 'react-router-dom';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
-export const LoadingPage = () => {
+export const LoadingProgress = () => {
   useEffect(() => {
     NProgress.set(0.4);
     return () => {
@@ -15,7 +15,7 @@ export const LoadingPage = () => {
   return null;
 };
 
-export const withLazyComponentLoading = (WrappedComponent: any, LoadingComponent: any = LoadingPage) => (props: {
+export const withLazyComponentLoading = (WrappedComponent: any, LoadingComponent: any = LoadingProgress) => (props: {
   [x: string]: any;
 }) => {
   return (
