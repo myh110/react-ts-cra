@@ -29,6 +29,7 @@
 - 路由组织
   - 嵌套路由
   - base path
+  - lazy component
 
 ## Link
 

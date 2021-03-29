@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { withLazyComponentLoading } from './utils';
 
 import Home from '@/views/Home/index';
@@ -9,6 +9,9 @@ export type RouteItem = {
   routes?: any;
   redirect?: string;
   component?: any;
+  meta?: {
+    [key: string]: any;
+  };
 };
 
 export const basePath: string = '/cms';
@@ -17,6 +20,9 @@ export const routes: RouteItem[] = [
   {
     path: '/',
     redirect: '/home',
+    meta: {
+      keepAlive: true,
+    },
   },
   {
     path: '/home',
@@ -27,7 +33,7 @@ export const routes: RouteItem[] = [
     component: withLazyComponentLoading(React.lazy(() => import('@/views/My/index'))),
     routes: [
       {
-        path: 'star',
+        path: '/star',
         component: withLazyComponentLoading(React.lazy(() => import('@/views/My/Star/index'))),
       },
       {
@@ -41,7 +47,11 @@ export const routes: RouteItem[] = [
     component: withLazyComponentLoading(React.lazy(() => import('@/views/About/index'))),
   },
   {
-    path: '*',
+    path: '/404',
     component: NotFound,
+  },
+  {
+    path: '*',
+    redirect: '/404',
   },
 ];

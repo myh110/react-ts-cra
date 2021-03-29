@@ -1,12 +1,25 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { RouteItem, basePath } from './config';
 import { Route, Navigate } from 'react-router-dom';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 
-export const withLazyComponentLoading = (WrappedComponent: any, LoadingComponent?: any) => (props: {
+export const LoadingPage = () => {
+  useEffect(() => {
+    NProgress.set(0.4);
+    return () => {
+      NProgress.done();
+    };
+  }, []);
+
+  return null;
+};
+
+export const withLazyComponentLoading = (WrappedComponent: any, LoadingComponent: any = LoadingPage) => (props: {
   [x: string]: any;
 }) => {
   return (
-    <Suspense fallback={LoadingComponent || <div>Loading...</div>}>
+    <Suspense fallback={<LoadingComponent /> || null}>
       <WrappedComponent {...props} />
     </Suspense>
   );
@@ -22,7 +35,7 @@ export const generateRouter = (basePath: string, needAdd: boolean = false) => (r
       return (
         <Route
           key={index}
-          path={basePath || '/'}
+          path={`${basePath}${item.path}`}
           element={<Navigate to={`${basePath || ''}${item.redirect}`} replace />}
         />
       );

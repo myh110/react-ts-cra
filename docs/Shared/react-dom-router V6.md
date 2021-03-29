@@ -1,125 +1,23 @@
-# React Router V6 初探
-
-× Contents
-
-× Share this Tutorial
-
-Where would you like to share this to?
---------------------------------------
-
-*   [](http://twitter.com/share?text=A%20Sneak%20Peek%20at%20React%20Router%20v6&url=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dtwshare "Share on Twitter")[Twitter](http://twitter.com/share?text=A%20Sneak%20Peek%20at%20React%20Router%20v6&url=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dtwshare "Share on Twitter")
-*   [](https://www.reddit.com/submit?url=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Drdshare&title=A%20Sneak%20Peek%20at%20React%20Router%20v6 "Share on Reddit")[Reddit](https://www.reddit.com/submit?url=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Drdshare&title=A%20Sneak%20Peek%20at%20React%20Router%20v6 "Share on Reddit")
-*   [](https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dhnshare&t=A%20Sneak%20Peek%20at%20React%20Router%20v6 "Submit to Hacker News")[Hacker News](https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dhnshare&t=A%20Sneak%20Peek%20at%20React%20Router%20v6 "Submit to Hacker News")
-*   [](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dfbshare "Share on Facebook")[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dfbshare "Share on Facebook")
-
-Share link
-
-Tutorial share link
-
-× Share this Tutorial
-
-Where would you like to share this to?
---------------------------------------
-
-*   [](http://twitter.com/share?text=A%20Sneak%20Peek%20at%20React%20Router%20v6&url=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dtwshare "Share on Twitter")[Twitter](http://twitter.com/share?text=A%20Sneak%20Peek%20at%20React%20Router%20v6&url=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dtwshare "Share on Twitter")
-*   [](https://www.reddit.com/submit?url=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Drdshare&title=A%20Sneak%20Peek%20at%20React%20Router%20v6 "Share on Reddit")[Reddit](https://www.reddit.com/submit?url=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Drdshare&title=A%20Sneak%20Peek%20at%20React%20Router%20v6 "Share on Reddit")
-*   [](https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dhnshare&t=A%20Sneak%20Peek%20at%20React%20Router%20v6 "Submit to Hacker News")[Hacker News](https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dhnshare&t=A%20Sneak%20Peek%20at%20React%20Router%20v6 "Submit to Hacker News")
-*   [](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dfbshare "Share on Facebook")[Facebook](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Freact-react-router-v6%3Futm_content%3Dreact-react-router-v6%26utm_medium%3Dcommunity%26utm_source%3Dfbshare "Share on Facebook")
-
-Share link
-
-Tutorial share link
-
-[×](javascript:;)
-
-#### Sign up for our newsletter
-
-Get the latest tutorials on SysAdmin and open source topics.
-
-  
-
- Sign Up 
-
-[×](javascript:;)
-
-Thanks for signing up!
-
-DigitalOcean home
-
-*   [Products](https://www.digitalocean.com/products/)
-*   [Pricing](https://www.digitalocean.com/pricing/)
-*   Docs
-    
-    *   [Product Docs](https://www.digitalocean.com/docs/)
-    *   [API Docs](https://developers.digitalocean.com/documentation/)
-    
-*   Sign in
-    
-    Sign in to
-    
-    *   [Community](https://www.digitalocean.com/community/auth/digitalocean)
-    *   [Control Panel](https://cloud.digitalocean.com/registrations/new)
-    
-
-*   [](https://www.digitalocean.com/)
-*   [](https://www.digitalocean.com/community "DigitalOcean Community Home")
-*   [Tutorials](https://www.digitalocean.com/community/tutorials)
-*   [Questions](https://www.digitalocean.com/community/questions)
-*   Get Involved
-    
-    Participate
-    
-    *   [
-        
-        **Hub for Good** Supporting each other to make an impact
-        
-        ](https://www.digitalocean.com/community/pages/hub-for-good)
-    *   [
-        
-        **Write for DigitalOcean** You get paid, we donate to tech non-profits.
-        
-        ](https://www.digitalocean.com/community/pages/write-for-digitalocean)
-    *   [
-        
-        **Hacktoberfest** Contribute to Open Source
-        
-        ](https://hacktoberfest.digitalocean.com/)
-    
-    Build with DigitalOcean
-    
-    *   [Community Tools and Integrations](https://www.digitalocean.com/community/tools "Community-built tools and integrations that use the DigitalOcean API")
-    *   [Hatch Startup Program](https://www.digitalocean.com/hatch/ "Build your startup on DigitalOcean.")
-    *   [Marketplace Partner Program](https://marketplace.digitalocean.com/vendors/ "List your open source One-Click Application in the DigitalOcean Marketplace")
-    *   [Solutions Partner Program](https://www.digitalocean.com/partners/solutions-partners/ "Easily deploy & modernize your clients’ infrastructures with the Solutions Partner Program")
-    *   [Presentation Grants](https://www.digitalocean.com/droplets-for-demos/ "DigitalOcean credits to fund research for conference and meetup presentations")
-    *   [DigitalOcean on GitHub](https://github.com/digitalocean "View all the open-source projects that DigitalOcean have on GitHub")
-    
-*   [](javascript:void(0);)
-*   Search Community /
-*   [Sign Up](https://www.digitalocean.com/community/auth/digitalocean?display=sessionless+register+button)
-
-#### Tutorial
-
-A Sneak Peek at React Router v6
+React Router V6 初探
 ===============================
-
-[React](https://www.digitalocean.com/community/tags/react)
-
-*   By William Le
-    
-    Published onMarch 17, 2020
-
-While this tutorial has content that we believe is of great benefit to our community, we have not yet tested or edited it to ensure you have an error-free learning experience. It's on our list, and we're working on it! You can help us out by using the "report an issue" button at the bottom of the tutorial.
 
 At the time of this writing, React Router v6 is still in alpha, but the time is about right to start playing with it and exploring what’s to come. This guide will give you a peek at the new features/changes!
 
 As you may know, the lead maintainers forked the [React Router](https://github.com/ReactTraining/react-router) project to create a lightweight alternative called [Reach Router](https://www.digitalocean.com/community/tutorials/react-reach-router-vs-react-router) in early 2018.
 
-During this time, both libraries grew, however it seems that active development for Reach Router will stop, and will be merged into the [upcoming React Router v6](https://reacttraining.com/blog/reach-react-router-future/) 🛣
+During this time, both libraries grew, however it seems that active development for `Reach Router` will stop, and will be merged into the [upcoming React Router v6](https://reacttraining.com/blog/reach-react-router-future/) 🛣
 
 With the release coming soon, here’s a sneak peek of what’s coming!
 
-Jump to…
+在写这篇文章的时候，`React Router v6` 已经发布 alpha 版本，现在是时候尝试一下它的新特性了。本指南是带你了解它的最新特性和该白！
+
+你可能知道，2018 年初项目的主要维护人员 forked 了 [React Router](https://github.com/ReactTraining/react-router) 项目创建了更轻量的路由库 [Reach Router](https://www.digitalocean.com/community/tutorials/react-reach-router-vs-react-router)
+
+在这段时间里，这俩个库都在发展，但是 `Reach Router` 的积极开发似乎将停止，并且将代码合并到了 [upcoming React Router v6](https://reacttraining.com/blog/reach-react-router-future/) 🛣
+
+随着即将发布，我们来了解一些它的新特性！
+
+快速跳转
 --------
 
 *   [<Switch> is becoming <Routes>](about:blank#switch-is-becoming-routes)
@@ -128,10 +26,22 @@ Jump to…
 *   [useNavigate instead of useHistory](about:blank#usenavigate-instead-of-usehistory)
 *   [From 20kb to 8kb](about:blank#from-20kb-to-8kb)
 
+*   [<Switch> 组件转变成 <Routes>](about:blank#switch-is-becoming-routes)
+*   [<Route> 组件的大改动](about:blank#big-changes-with-route)
+*   [嵌套路由变得容易](about:blank#nested-routes-are-simpler)
+*   [useNavigate Hook 代替 useHistory](about:blank#usenavigate-instead-of-usehistory)
+*   [从 20k 到 8k](about:blank#from-20kb-to-8kb)
+
+
+
 <Switch> is becoming <Routes>
+-----------------------------
+`<Switch>` 组件转变成 `<Routes>`
 -----------------------------
 
 This top-level component is going to be renamed. However, its functionality is mostly remaining the same.
+
+这个顶级组件将被重命名。但是，它的功能基本保持不变。
 
 ```js
 // v5
@@ -155,6 +65,8 @@ function App() {
 
 Just drop <Routes> in there:
 
+使用 `<Routes>` 示例：
+
 ```js
 // v6
 import {
@@ -177,10 +89,16 @@ function App() {
 
 Big Changes with <Route>
 ------------------------
+`<Route>` 组件的大变动
+------------------------
 
 In v6 the <Route> component is receiving the biggest overhaul. Fortunately, these new changes will actually be making it simpler to use!
 
 The `component/render` prop will be substituted for the `element` prop:
+
+在 v6 中，`<Route>` 组件改动很大。幸运的是，这些新的变化实际上会使它更易于使用！
+
+组件的 prop `render` 被替换成了 `element`：
 
 ```js
 import Profile from './Profile';
