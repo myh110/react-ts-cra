@@ -30,3 +30,4 @@ const App: React.FC<{}> = () => {
 export default App;
 
 export { withBasePath } from './utils';
+export { menuConfig, getSubMenuOnlyKeyByPath } from './config';

@@ -4,6 +4,7 @@ import { Route, Navigate } from 'react-router-dom';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
+
 export const LoadingProgress = () => {
   useEffect(() => {
     NProgress.set(0.4);

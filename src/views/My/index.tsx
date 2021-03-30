@@ -8,7 +8,7 @@ const My = () => {
     console.log(a);
   }
 
-  const contentStyle: any = {
+  const contentStyle: { [key: string]: string } = {
     height: '160px',
     color: '#fff',
     lineHeight: '160px',

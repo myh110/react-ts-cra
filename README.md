@@ -30,6 +30,7 @@
   - 嵌套路由
   - base path
   - lazy component
+  - 基于路由的菜单栏
 
 ## Link
 
