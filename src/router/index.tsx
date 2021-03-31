@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, useRoutes } from 'react-router-dom';
 import { basePath, routes } from './config';
 import { generateRouter } from './utils';
 

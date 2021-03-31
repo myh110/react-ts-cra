@@ -1,9 +1,8 @@
 import React, { Suspense, useEffect } from 'react';
 import { RouteItem, basePath } from './config';
-import { Route, Navigate } from 'react-router-dom';
+import { Route, Navigate, useRoutes } from 'react-router-dom';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-
 
 export const LoadingProgress = () => {
   useEffect(() => {

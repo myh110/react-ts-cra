@@ -7,7 +7,7 @@ const Star: React.FC<{}> = () => {
       <h1>I am Star</h1>
       <div>
         I am Star sub component
-        <Outlet />
+        {/* <Outlet /> */}
       </div>
     </>
   );

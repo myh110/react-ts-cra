@@ -1,7 +1,7 @@
 import React from 'react';
 import { withLazyComponentLoading } from './utils';
 
-import PageLayout, { withPageLayout } from '@/layout/index';
+import { withPageLayout } from '@/layout/index';
 import Home from '@/views/Home/index';
 import NotFound from '@/views/404';
 
@@ -118,7 +118,7 @@ export const getSubMenuOnlyKeyByPath = (path: string | string[]): string[] => {
     for (const item of list) {
       if (item.routes) {
         for (const lookupItem of lookupList) {
-          console.log(lookupItem, item.subMenuOnlyKey);
+          // console.log(lookupItem, item.subMenuOnlyKey);
           // eslint-disable-next-line no-loop-func
           item.subMenuOnlyKey.split('-').forEach((element: string) => {
             lookupItem.indexOf(element) > -1 && result.push(item.subMenuOnlyKey);
@@ -133,3 +133,4 @@ export const getSubMenuOnlyKeyByPath = (path: string | string[]): string[] => {
 
   return recursion(menuConfig);
 };
+

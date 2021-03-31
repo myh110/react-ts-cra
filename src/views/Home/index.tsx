@@ -6,7 +6,7 @@ import { withBasePath } from '@/router/index';
 const Home: React.FC<{}> = () => {
   return (
     <>
-      <div>Index 页面</div>
+      <div>dashboard 页面</div>
       <ul>
         <li>
           <Link to={withBasePath('/')}>

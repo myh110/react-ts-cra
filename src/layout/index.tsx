@@ -40,7 +40,7 @@ const PageLayout: React.FC<{}> = (props) => {
   let navigate = useNavigate();
   let { pathname } = useLocation();
 
-  console.log(pathname, menuConfig, getSubMenuOnlyKeyByPath(pathname));
+  // console.log(pathname, menuConfig, getSubMenuOnlyKeyByPath(pathname));
 
   return (
     <>
@@ -59,6 +59,8 @@ const PageLayout: React.FC<{}> = (props) => {
           <Menu
             theme="dark"
             mode="inline"
+            selectedKeys={[pathname]}
+            // openKeys={getSubMenuOnlyKeyByPath(pathname)}
             defaultSelectedKeys={[pathname]}
             defaultOpenKeys={getSubMenuOnlyKeyByPath(pathname)}
           >
